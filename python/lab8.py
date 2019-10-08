@@ -19,11 +19,12 @@ def get_nickels(pennies):
   return nickels, leftover_pennies
 
 def main():
-  """asks user for numerical input, determines number of quarters, dimes, nickels and pennies based on input and prints the result"""
-  starting_pennies = int(input("\nPlease enter the total number of pennies you wish to convert: "))
+  """asks user for dollar amount, converts to pennies, determines number of quarters, dimes, nickels and pennies based on input and prints the result"""
+  user_dollar_amount = float(input("\nPlease enter the dollar amount which you wish to convert: $"))
+  starting_pennies = user_dollar_amount * 100
   quarters, leftover_pennies = get_quarters(starting_pennies)
   dimes, leftover_pennies = get_dimes(leftover_pennies)
   nickels, leftover_pennies = get_nickels(leftover_pennies)
-  print(f"\nYou have {quarters} quarter(s), {dimes} dime(s), {nickels} nickel(s) and {leftover_pennies} pennies\n")
+  print(f"\nYou have {int(quarters)} quarter(s), {int(dimes)} dime(s), {int(nickels)} nickel(s) and {int(leftover_pennies)} pennies\n")
 
 main()
