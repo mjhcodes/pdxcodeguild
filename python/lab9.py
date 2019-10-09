@@ -1,56 +1,76 @@
 # Lab 9 - Unit Converter
 
-def feet_to_meters(distance):
-  """accepts n amount of feet and converts to meters"""
-  meters = distance * .3048
-  return meters
+# global table conversions
+to_meter_table = {
+  "feet": .3048,
+  "miles": 1609.34,
+  "meters": 1,
+  "kilometers": 1000,
+  "yards": .9144,
+  "inches": .0254
+}
 
-def miles_to_meters(distance):
-  """accepts n amount of miles and converts to meters"""
-  meters = distance * 1609.34
-  return meters
+from_meter_table = {
+  "feet": 3.28084,
+  "miles": 0.000621371,
+  "meters": 1,
+  "kilometers": 0.001,
+  "yards": 1.09361,
+  "inches": 39.3701
+}
 
-def meters_to_meters(distance):
-  """accepts n amount of meters and returns same amount"""
-  meters = distance
-  return meters
+def translate_input_unit(input_unit):
+  """checks user input and stores as written variable"""
+  if input_unit.startswith("f"):
+    input_unit = "feet"
+  elif input_unit.startswith("mi"):
+    input_unit = "miles"
+  elif input_unit.startswith("me") or input_unit == "m":
+    input_unit = "meters"
+  elif input_unit.startswith("k"):
+    input_unit = "kilometers"
+  elif input_unit.startswith("y"):
+    input_unit = "yards"
+  elif input_unit.startswith("i"):
+    input_unit = "inches"
+  else:
+    print("\nError. Requires an accepted unit of measurement (e.g. miles, kilometers, meters, yards, feet or inches). Exiting... \n")
+    quit()
+  return input_unit
 
-def kilometers_to_meters(distance):
-  """accepts n amount of kilometers and converts to meters"""
-  meters = distance * 1000
-  return meters
-
-def yards_to_meters(distance):
-  """accepts n amount of yards and converts to meters"""
-  meters = distance * .9144
-  return meters
-
-def inches_to_meters(distance):
-  """accepts n amount of inches and converts to meters"""
-  meters = distance * .0254
-  return meters
-
-def determine_conversion(distance, units):
-  """determines conversion based on accepted unit type and converts distance accordingly"""
-  if units.startswith("f"):
-    converted_meters = feet_to_meters(distance)
-  elif units.startswith("mi"):
-    converted_meters = miles_to_meters(distance)
-  elif units.startswith("me") or units == "m":
-    converted_meters = meters_to_meters(distance)
-  elif units.startswith("k"):
-    converted_meters = kilometers_to_meters(distance)
-  elif units.startswith("y"):
-    converted_meters = yards_to_meters(distance)
-  elif units.startswith("i"):
-    converted_meters = inches_to_meters(distance)
-  return converted_meters
+def translate_output_unit(output_unit):
+  """checks user input and stores as written variable"""
+  if output_unit.startswith("f"):
+    output_unit = "feet"
+  elif output_unit.startswith("mi"):
+    output_unit = "miles"
+  elif output_unit.startswith("me") or output_unit == "m":
+    output_unit = "meters"
+  elif output_unit.startswith("k"):
+    output_unit = "kilometers"
+  elif output_unit.startswith("y"):
+    output_unit = "yards"
+  elif output_unit.startswith("i"):
+    output_unit = "inches"
+  else:
+    print("\nError. Requires an accepted unit of measurement (e.g. miles, kilometers, meters, yards, feet or inches). Exiting... \n")
+    quit()
+  return output_unit
 
 def main():
-  """asks user for distance and units, then converts to meters and prints result, rounded to two decimal places"""
-  user_distance = float(input("What is the distance? "))
-  user_units = input("What are the units? ").lower()
-  converted_meters = determine_conversion(user_distance, user_units)
-  print(f"{user_distance:.2f} {user_units} is {converted_meters:.2f} meters.")
+  user_distance = float(input("\nWhat is the distance? "))
+  if user_distance % 1 == 0:
+    user_distance = int(user_distance)
+  user_input_units = input("What are the input units? ").lower()
+  formal_input_units = translate_input_unit(user_input_units)
+  user_output_units = input("What are the output units? ").lower()
+  formal_output_units = translate_output_unit(user_output_units)
+  converted_meters = user_distance * to_meter_table[formal_input_units]
+  converted_output = converted_meters * from_meter_table[formal_output_units]
+  if converted_output % 1 < .00001:
+    converted_output = int(converted_output)
+  else:
+    converted_output = "{0:.4f}".format(converted_output)
+  print(f"\n{user_distance} {formal_input_units} converts to {converted_output} {formal_output_units}.\n")
 
 main()
