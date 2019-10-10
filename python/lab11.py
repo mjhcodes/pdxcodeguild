@@ -28,11 +28,8 @@ def run_operation(operator, num_one, num_two):
     result = get_difference(operator, num_one, num_two)
   elif operator == "*":
     result = get_product(operator, num_one, num_two)
-  elif operator == "%" or operator == "/":
-    result = get_quotient(operator, num_one, num_two)
   else:
-    print(f"Error. {operator} is not a valid operation. Exiting...")
-    quit()
+    result = get_quotient(operator, num_one, num_two)
   return result
 
 def get_clean_result(result):
@@ -44,12 +41,17 @@ def get_clean_result(result):
   return clean_result
 
 def main():
-  """prompts user for operator and two numbers, runs specified operation and prints result"""
-  operator = input("\nWhat is the operation you'd like to perform? (+, -, * or %): ")
-  num_one = float(input("What is the first number? "))
-  num_two = float(input("What is the second number? "))
-  result = run_operation(operator, num_one, num_two)
-  clean_result = get_clean_result(result)
-  print(f"\nSolution = {clean_result}\n")
+  """prompts user for operator and two numbers, runs specified operation and prints result; continues to run until user types 'done'"""
+  operator_list = ["+", "-", "*", "%", "/"]
+  while True:
+    operator = input("\nFrom the following options: (+, -, *, %)\nWhat is the operation you'd like to perform? (type 'done' to exit): ")
+    if operator not in operator_list:
+      print("\nGoodbye!\n")
+      break
+    num_one = float(input("What is the first number? "))
+    num_two = float(input("What is the second number? "))
+    result = run_operation(operator, num_one, num_two)
+    clean_result = get_clean_result(result)
+    print(f"\nSolution = {clean_result}")
 
 main()
