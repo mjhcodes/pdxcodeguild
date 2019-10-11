@@ -5,16 +5,15 @@ import random
 def pick6():
   """generates a list of six random numbers"""
   ticket = []
-  i = 1
-  while i <= 6:
+  for num in range(6):
     ticket.append(random.randint(0, 99))
-    i += 1
   return ticket
 
-def buy_ticket(balance):
-  """accepts current balance and subtracts by two, which is the price of the ticket"""
+def buy_ticket(balance, expenses):
+  """simulates ticket purchase: subtracts $2 from balance and adds $2 to expenses"""
   balance -= 2
-  return balance
+  expenses += 2
+  return balance, expenses
 
 def num_matches(winning, ticket):
   """accepts two tickets and compares their numbers in order to determine the amount of matches"""
@@ -24,33 +23,48 @@ def num_matches(winning, ticket):
       matches += 1
   return matches
 
-def determine_winnings(matches, balance):
-  """checks number of matches and adds corresponding amount to the balance"""
+def determine_winnings(balance, earnings, matches):
+  """checks number of matches and adds corresponding amount to both the balance and earnings"""
   if matches == 1:
     balance += 4
+    earnings += 4
   elif matches == 2:
     balance += 7
+    earnings += 7
   elif matches == 3:
     balance += 100
+    earnings += 100
   elif matches == 4:
     balance += 50000
+    earnings += 50000
   elif matches == 5:
     balance += 1000000
+    earnings += 1000000
   elif matches == 6:
     balance += 25000000
-  return balance
+    earnings += 25000000
+  return balance, earnings
+
+def get_roi(earnings, expenses):
+  """accepts total earnings and expenses, then runs the calculation to determine the return on investment"""
+  roi = (earnings - expenses) / expenses
+  return roi
 
 def main():
-  """generates the winning ticket, sets the balance at zero; cycles through 100,000 purchased tickets, checks number of matches, updates balance based on winnings and returns final balance once complete"""
+  """lottery simulator based on 100,000 purchased tickets; returns final balance, earnings, expenses and ROI"""
   winning_ticket = pick6()
   balance = 0
+  earnings = 0
+  expenses = 0
+  tickets = 100000
   count = 1
-  while count <= 100000:
+  while count <= tickets:
     user_ticket = pick6()
-    balance = buy_ticket(balance)
+    balance, expenses = buy_ticket(balance, expenses)
     matches = num_matches(winning_ticket, user_ticket)
-    balance = determine_winnings(matches, balance)
+    balance, earnings = determine_winnings(balance, earnings, matches)
     count += 1
-  print(f"${balance}")
+  roi = get_roi(earnings, expenses)
+  print(f"\nFinal Balance: ${balance}\nEarnings: ${earnings}\nExpenses: ${expenses}\nROI: {roi}\n")
 
 main()
