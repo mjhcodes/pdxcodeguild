@@ -59,4 +59,4 @@ def main_anagram():
   is_anagram = check_anagram(sorted_one, sorted_two)
   print_anagram_result(word_one, word_two, is_anagram)
 
-main_anagram()
+# main_anagram()
