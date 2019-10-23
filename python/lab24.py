@@ -55,7 +55,20 @@ def get_max_rain_date(merged_data):
   rain_totals = [date[1] for date in merged_data]
   max_rain_total = max(rain_totals)
   max_rain_date = [date[0] for date in merged_data if date[1] == max_rain_total]
-  return max_rain_date
+  return max_rain_date[0]
+
+def print_results(mean, variance, max_rain_date):
+  """accepts results and prints each back to the user"""
+  print(f"\nThe mean of the data is {mean}.")
+  print(f"The variance of the data is {variance}.")
+  print(f"The date which had the most rain was {max_rain_date}.\n")
+
+def plot_results(dates, daily_totals):
+  """creates an x, y graph with the dates along the x-axis and the daily totals along the y-axis"""
+  plt.plot(dates, daily_totals)
+  plt.ylabel("Daily Totals")
+  plt.xlabel("Dates")
+  plt.show()
 
 def main():
   data = open_file()
@@ -65,6 +78,7 @@ def main():
   mean = calculate_mean(daily_totals)
   variance = calculate_variance(mean, daily_totals)
   max_rain_date = get_max_rain_date(merged_data)
-  print(max_rain_date)
+  print_results(mean, variance, max_rain_date)
+  plot_results(dates, daily_totals)
 
 main()
