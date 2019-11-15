@@ -1,359 +1,240 @@
 <!DOCTYPE html>
 <html>
 
-  <head> <!-- HTML HEAD / START -->
-    <title>Mateo's Burrito Bar</title>
-    <meta name="author" content="Matthew Hughes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head> <!-- HTML HEAD -->
+    <title>Matthew J. Hughes - Full Stack Web Developer</title>
+    <meta name="author" content="Matthew J. Hughes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,800&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/02b8298c98.js"></script>
-  </head> <!-- HTML HEAD / END -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-  <body id="body-grid">
+  <body class="body-grid">
 
-    <header id="item-header"> <!-- HEADER / START ... -->
+    <header class="item-header canvas-back"> <!-- HEADER -->
 
-      <div>
-        <h1>Mateo's Burrito Bar</h1>
+      <nav class="nav-flex"> <!-- NAV BAR -->
+        <ul>
+          <li class="nav-links">
+            <a href="#"><i class="fas fa-home"></i></a>
+          </li>
+          <li class="nav-links">
+            <a href="#about">ABOUT</a>
+          </li>
+          <li class="nav-links">
+            <a href="#projects">PROJECTS</a>
+          </li>
+          <li class="nav-links">
+            <a href="#blog">BLOG</a>
+          </li>
+          <li class="nav-links">
+            <a href="#contact">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-contacts">
+        <div class="nav-icons">
+          <a href="https://twitter.com/mjhwrites" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/mjhughesio/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/mjhughesio" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://medium.com/@mjhwrites" target="_blank"><i class="fab fa-medium-m"></i></a>
+          <a href="mailto:mjhughes707@gmail.com" target="_top"><i class="fas fa-paper-plane"></i></a>
+        </div>
       </div>
 
-    </header> <!-- ... HEADER / END -->
-
-    <main id="item-main">
-
-      <h2>Online Order Form</h2>
-      <form id="form-grid" action="http://webhook.site/dddd4d66-814c-44b5-b0e7-1bd04815bb40" method="post"> 
-        <fieldset id="item-tortilla">
-          <legend>Tortilla</legend>
-
-          <div class="radio-select">
-            <input type="radio" name="tortilla" value="white-flour" id="white-flour"/><label for="white-flour" class="label-space">White Flour</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="tortilla" value="wheat-flour" id="wheat-flour"/><label for="wheat-flour" class="label-space">Wheat Flour</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="tortilla" value="spinach-tortilla" id="spinach-tortilla"/><label for="spinach-tortilla" class="label-space">Spinach</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="tortilla" value="corn-tortilla" id="corn-tortilla" /><label for="corn-tortilla" class="label-space">Corn (GF)</label>
-          </div>
-
-        </fieldset>
-        <fieldset id="item-rice">
-          <legend>Rice</legend>
-
-          <div class="radio-select">
-            <input type="radio" name="rice" value="white-rice" id="white-rice"/><label for="white-rice" class="label-space">White Rice</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="rice" value="spanish-rice" id="spanish-rice"/><label for="spanish-rice" class="label-space">Spanish Rice</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="rice" value="brown-rice" id="brown-rice"/><label for="brown-rice" class="label-space">Brown Rice</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="rice" value="no-rice" id="no-rice"/><label for="no-rice" class="label-space">No Rice</label>
-          </div>
-
-        </fieldset>
-        <fieldset id="item-beans">
-          <legend>Beans</legend>
-
-          <div class="radio-select">
-            <input type="radio" name="beans" value="black-beans" id="black-beans" /><label for="black-beans" class="label-space">Black Beans</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="beans" value="refried-beans" id="refried-beans" /><label for="refried-beans" class="label-space">Refried Beans</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="beans" value="pinto-beans" id="pinto-beans" /><label for="pinto-beans" class="label-space">Pinto Beans</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="beans" value="no-beans" id="no-beans" /><label for="no-beans" class="label-space">No Beans</label>
-          </div>
-
-        </fieldset>
-        <fieldset id="item-cheese">
-          <legend>Cheese</legend>
-
-          <div class="radio-select">
-            <input type="radio" name="cheese" value="cheddar" id="cheddar" /><label for="cheddar" class="label-space">Cheddar</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="cheese" value="pepper-jack" id="pepper-jack" /><label for="pepper-jack" class="label-space">Pepper Jack</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="cheese" value="mozzarella" id="mozzarella" /><label for="mozzarella" class="label-space">Mozzarella</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="cheese" value="monterey-jack" id="monterey-jack" /><label for="monterey-jack" class="label-space">Monterey Jack</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="cheese" value="american" id="american" /><label for="american" class="label-space">American</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="cheese" value="no-cheese" id="no-cheese" /><label for="no-cheese" class="label-space">No Cheese</label>
-          </div>
-
-        </fieldset>
-        <fieldset id="item-filling">
-          <legend>Filling</legend>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="beef" id="beef" /><label for="beef" class="label-space">Beef</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="chicken" id="chicken" /><label for="chicken" class="label-space">Chicken</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="carnitas" id="carnitas" /><label for="carnitas" class="label-space">Carnitas</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="carne-asada" id="carne-asada" /><label for="carne-asada" class="label-space">Carne Asada</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="chorizo" id="chorizo" /><label for="chorizo" class="label-space">Chorizo</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="shrimp" id="shrimp" /><label for="shrimp" class="label-space">Shrimp</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="veggie" id="veggie" /><label for="veggie" class="label-space">Veggie</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="filling" value="no-filling" id="no-filling" /><label for="no-filling" class="label-space">No Filling</label>
-          </div>
-            
-        </fieldset>
-        <fieldset id="item-extras">
-          <legend>Extras</legend>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="lettuce" id="lettuce" /><label for="lettuce" class="label-space">Lettuce</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="spinach" id="spinach" /><label for="spinach" class="label-space">Spinach</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="tomatoes" id="tomatoes" /><label for="tomatoes" class="label-space">Tomatoes</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="onions" id="onions" /><label for="onions" class="label-space">Onions</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="cabbage" id="cabbage" /><label for="cabbage" class="label-space">Cabbage</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="sweet-corn" id="sweet-corn" /><label for="sweet-corn" class="label-space">Sweet Corn</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="olives" id="olives" /><label for="olives" class="label-space">Olives</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="sour-cream" id="sour-cream" /><label for="sour-cream" class="label-space">Sour Cream</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="avocado" id="avocado" /><label for="avocado" class="label-space">Avocado</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="pico-de-gallo" id="pico-de-gallo" /><label for="pico-de-gallo" class="label-space">Pico de Gallo</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="cilantro" id="cilantro" /><label for="cilantro" class="label-space">Cilantro</label>
-          </div>
-
-          <div class="checkbox-select">
-            <input type="checkbox" name="extras" value="jalapenos" id="jalapenos" /><label for="jalapenos" class="label-space">Jalapeños</label>
-          </div>
-
-        </fieldset>
-
-        <fieldset id="item-sauce">
-          <legend>Sauce</legend>
-
-          <div class="radio-select">
-            <input type="radio" name="sauce" value="salsa-roja" id="salsa-roja" /><label for="salsa-roja" class="label-space">Salsa Roja</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="sauce" value="salsa-verde" id="salsa-verde" /><label for="salsa-verde" class="label-space">Salsa Verde</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="sauce" value="chipotle" id="chipotle" /><label for="chipotle" class="label-space">Chipotle</label>
-          </div>
-
-          <div class="radio-select">
-            <input type="radio" name="sauce" value="no-sauce" id="no-sauce" /><label for="no-sauce" class="label-space">No Sauce</label>
-          </div>
-            
-        </fieldset>
-
-        <fieldset id="item-authenticate">
-          <legend>Authenticate</legend>
-
-          <div class="data-select">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" minlength="6" title="Username must have at least six characters" required />
-          </div>
-
-          <div class="data-select">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" minlength="6" title="Password must have at least six characters" required />
-          </div>
-
-        </fieldset>
-
-        <fieldset id="item-personal-info">
-          <legend>Personal Info</legend>
-
-          <div class="data-select">
-            <label for="firstname">First Name:</label>
-            <input type="text" name="firstname" id="firstname" placeholder="Mateo" minlength="2" title="First name must have at least two characters" required />
-          </div>
-
-          <div class="data-select">
-            <label for="lastname">Last Name:</label>
-            <input type="text" name="lastname" id="lastname" placeholder="Burrito" minlength="6" title="Last name must have at least two characters" required />
-          </div>
-
-          <div class="data-select">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" placeholder="example@gmail.com" required />
-          </div>
-
-          <div class="data-select">
-            <label for="telephone">Telephone:</label>
-            <input type="tel" name="telephone" id="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required />
-          </div>
-
-          <div class="data-select">
-            <label for="dob">Date of Birth:</label>
-            <input type="date" name="dob" id="dob" />
-          </div>
-
-        </fieldset>
-
-        <fieldset id="item-delivery-info">
-          <legend>Delivery Info</legend>
-
-          <div class="data-select">
-            <label for="street">Street:</label>
-            <input type="text" name="street" id="street" placeholder="2828 SW Corbett Ave." required />
-          </div>
-
-          <div class="data-select">
-            <label for="city">City:</label>
-            <input type="text" name="city" id="city" placeholder="Portland" required />
-          </div>
-
-          <div class="data-select">
-            <label for="state">State:</label>
-            <select name="state" id="state" required >
-              <option value="" disabled>Select a State</option>
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <option value="AR">Arkansas</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DE">Delaware</option>
-              <option value="DC">District Of Columbia</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="IA">Iowa</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="ME">Maine</option>
-              <option value="MD">Maryland</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MS">Mississippi</option>
-              <option value="MO">Missouri</option>
-              <option value="MT">Montana</option>
-              <option value="NE">Nebraska</option>
-              <option value="NV">Nevada</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR" selected>Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>
-            </select>
-          </div>
-
-          <div class="data-select">
-            <label for="zip">Zip Code:</label>
-            <input type="text" name="zip" id="zip" placeholder="97201" required />
-          </div>
-
-        </fieldset>
-        <div id="submit" class="item-submit">
-          <input type="submit" value="Submit">
+      <div class="header-img-div">
+        <h1 class="header-name">Matthew J. Hughes</h1>
+        <img src="img/matt-ngorongoro-sq.png" alt="Photo of Matt at the Ngorongoro Crater in Tanzania" class="header-image" />
+        <h1 class="header-title">Full-Stack Web Developer</h1>
+      </div>
+
+    </header>
+
+    <main class="main-grid item-main"> <!-- MAIN -->
+
+      <div id="about" class="about-grid item-about"> <!-- ABOUT -->
+        <div class="item-about-header">
+          <h2>ABOUT</h2>
+          <span class="h2-underline"></span>
         </div>
-      </form>
+        <div class="item-about-intro">
+          <h4>Matthew J. Hughes</h4>
+          <p>Full-Stack Web Developer based in Portland, OR.</p>
+          <p>Veteran of the U.S. Air Force, U.K. dual citizen, explorer of forty-one countries and counting.</p>
+          <p>Constantly curious, addicted to knowledge. A lifelong learner, always on the hunt for new ways to improve each day. Passionate about the process, from idea to creation to launch.</p>
+        </div>
+        <div class="item-about-hobbies">
+          <h3>HOBBIES</h3>
+          <span class="h3-underline"></span>
+          <div class="hobbies-icons">
+            <i class="fas fa-hiking"></i>
+            <i class="fas fa-book-reader"></i>
+            <i class="fas fa-cat"></i>
+            <i class="fas fa-plane-departure"></i>
+          </div>
+        </div>
+        <div class="item-about-skills">
+          <h3>SKILLS</h3>
+          <span class="h3-underline"></span>
+          <div class="skill-icons">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-python"></i>
+          </div>
+        </div>
+        <div class="item-about-resume">
+          <a href="#" class="cv-button">Download CV</a>
+        </div>
 
+
+      </div>
+
+      <div id="projects" class="item-projects"> <!-- PROJECTS -->
+        <h2>PROJECTS</h2>
+        <span class="h2-underline"></span>
+        <div class="project-grid">
+          <div id="project1" class="item-project project-container">
+            <img src="img/bouncing-cube.png" alt="Preview of The Office - Bouncing Cube project" class="project-image" />
+            <div class="project-overlay-a">
+                <div class="project-text">
+                  <h5>Bouncing Cube</h5>
+                  <a href="https://matthewjhughes.com/bouncing-cube">Learn More</a>
+                </div>
+            </div>
+          </div>
+          <div id="project2" class="item-project project-container">
+            <img src="img/HP-example.png" alt="Preview of Harry Potter Quiz project" class="project-image" />
+            <div class="project-overlay-b">
+                <div class="project-text">
+                  <h5>Harry Potter Quiz</h5>
+                  <a href="#">Learn More</a>
+                </div>
+            </div>
+          </div>
+          <div id="project3" class="item-project project-container">
+            <img src="img/HP-example.png" alt="Preview of Harry Potter Quiz project" class="project-image" />
+            <div class="project-overlay-a">
+                <div class="project-text">
+                  <h5>Harry Potter Quiz</h5>
+                  <a href="#">Learn More</a>
+                </div>
+            </div>
+          </div>
+          <div id="project4" class="item-project project-container">
+            <img src="img/HP-example.png" alt="Preview of Harry Potter Quiz project" class="project-image" />
+            <div class="project-overlay-b">
+                <div class="project-text">
+                  <h5>Harry Potter Quiz</h5>
+                  <a href="#">Learn More</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="blog" class="item-blog"> <!-- BLOGS -->
+        <h2>BLOG</h2>
+        <span class="h2-underline"></span>
+
+        <div class="blog-grid">
+          <div class="blogs blog1">
+            <div><a href="https://medium.com/swlh/the-political-power-of-words-3ea8c98686d9" target="_blank">
+              <img src="img/biden-flag.png" alt="A word cloud featuring the most common words tweeted by Joe Biden; projected onto the U.S. flag" class="blog-image"/>
+            </div>
+            <div class="blog-copy">
+              <h4>The Political Power of Words</h4>
+              <p class="publish-date"><time datetime="2019-07-28 20:00">SUNDAY, JULY 28<sup>TH</sup>, 2019</time></p>
+              <span class="blog-underline"></span>
+              <p>It was the Lebanese-born poet and painter, Kahlil Gibran, who once uttered, "all our words are but crumbs that fall down from the feast of the mind"...</p>
+            </div></a>
+          </div>
+
+          <div class="blogs blog2">
+            <div><a href="http://mjhughes.io" target="_blank">
+              <img src="img/flashcards.png" alt="Photo of a stack of flashcards on a desk" class="blog-image">
+            </div>
+            <div class="blog-copy">
+              <h4>It's Not The Flashiest</h4>
+              <p class="publish-date"><time datetime="2019-07-14 20:00">SUNDAY, JULY 14<sup>TH</sup>, 2019</time></p>
+              <span class="blog-underline"></span>
+              <p>When I was preparing for my recent move to Portland and subsequent admission into a coding bootcamp, I was faced with a familiar foe: anxiety... </p>
+            </div></a>
+          </div>
+
+          <div class="blogs blog3">
+            <div><a href="http://mjhughes.io" target="_blank">
+              <img src="img/binary-woman.png" alt="Photo of a woman's head surrounded by binary numbers" class="blog-image"/>
+            </div>
+            <div class="blog-copy">
+              <h4>We Start With Zero</h4>
+              <p class="publish-date"><time datetime="2019-07-07 20:00">SUNDAY, JULY 7<sup>TH</sup>, 2019</time></p>
+              <span class="blog-underline"></span>
+              <p>It's difficult to know where to begin. After all, I, myself, am a beginner. Tomorrow, I will walk through the doors of the PDX Code Guild to attend the 1st day of... </p>
+            </div></a>
+          </div>
+
+          <div class="blogs blog4">
+            <div><a href="https://medium.com/swlh/the-political-power-of-words-3ea8c98686d9" target="_blank">
+              <img src="img/biden-flag.png" alt="A word cloud featuring the most common words tweeted by Joe Biden; projected onto the U.S. flag" class="blog-image"/>
+            </div>
+            <div class="blog-copy">
+              <h4>The Political Power of Words</h4>
+              <p class="publish-date"><time datetime="2019-07-28 20:00">SUNDAY, JULY 28<sup>TH</sup>, 2019</time></p>
+              <span class="blog-underline"></span>
+              <p>It was the Lebanese-born poet and painter, Kahlil Gibran, who once uttered, "all our words are but crumbs that fall down from the feast of the mind"...</p>
+            </div></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="contact" class="item-contact"> <!-- CONTACT -->
+        <h2>CONTACT</h2>
+        <span class="h2-underline"></span>
+        <p>Question or interested in working together?</p>
+        <form action="http://webhook.site/dddd4d66-814c-44b5-b0e7-1bd04815bb40" method="post">
+
+          <div class="form-field">
+            <input type="text" name="name" id="name" placeholder="Name" minlength="2" title="Requires at least two characters" required />
+          </div>
+  
+          <div class="form-field">
+            <input type="email" name="email" id="email" placeholder="Email" required />
+          </div>
+
+          <div class="form-field">
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone #" title="Example: 555-555-5555" />
+          </div>
+
+          <div class="form-field">
+            <textarea name="message" id="message" placeholder="Message" required ></textarea>
+          </div>
+      
+          <div class="form-field submit-div">
+            <input type="submit" value="Submit">
+          </div>
+
+        </form>
+
+        <div class="contact-icons">
+          <a href="https://twitter.com/mjhwrites" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/mjhughesio/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/mjhughesio" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://medium.com/@mjhwrites" target="_blank"><i class="fab fa-medium-m"></i></a>
+          <a href="mailto:mjhughes707@gmail.com" target="_top"><i class="fas fa-paper-plane"></i></a>
+        </div>
+
+      </div>
+      <a href="#" class="back-to-top"><i class="fas fa-angle-double-up"></i></a>
     </main>
 
-    <footer id="item-footer"> <!-- FOOTER / START -->
-      <p>&copy; 2019 | Mateo's Burrito Bar</p>
-    </footer> <!-- FOOTER / END -->
+    <footer class="item-footer"> <!-- FOOTER -->
+      <p>Copyright &copy; 2019 | Matthew J. Hughes</p>
+    </footer>
 
   </body>
 
