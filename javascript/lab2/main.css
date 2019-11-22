@@ -28,6 +28,7 @@ body {
   padding: 10px;
   background: lightcyan;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .todo-div {
@@ -61,10 +62,17 @@ li {
   margin-left: 20px;
 }
 
+.completed-text {
+  text-decoration: line-through;
+  font-style: italic;
+  color: grey;
+}
+
 .far {
   margin-left: auto;
   margin-right: 20px;
   padding: 20px;
   color: red;
+  cursor: pointer;
 }
 
