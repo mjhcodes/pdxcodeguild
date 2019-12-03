@@ -1,7 +1,5 @@
 socials = [
-  "facebook.com/mjhughes707",
-  "twitter.com/mjhwrites",
-  "instagram.com/mjhughes707",
+  "twitter.com/mjhughesio",
   "linkedin.com/in/mjhughesio",
   "medium.com/@mjhwrites",
   "github.com/mjhughesio"
