@@ -1,0 +1,21 @@
+/***** FULL PAGE *****/
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/***** MAIN SECTION *****/
+
+#mapid {
+  height: 100vh;
+}
