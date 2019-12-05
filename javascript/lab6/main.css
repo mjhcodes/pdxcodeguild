@@ -17,5 +17,14 @@ body {
 /***** MAIN SECTION *****/
 
 #mapid {
-  height: 100vh;
+  height: 50vh;
+}
+
+#dataStore {
+  height: 50vh;
+  margin-top: 50px;
+}
+
+.contact-info {
+  margin: 10px 50px;
 }

@@ -1,5 +1,5 @@
 // initializes the map on the "mapid" div with a given center (lat, lng) and zoom
-const mymap = L.map('mapid').setView([0, 0], 2);
+const mymap = L.map('mapid').setView([0, 0], 1);
 
 // loads and displays tile layers on the map - attribution required!
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -35,6 +35,16 @@ function placeMarkers(users) {
     let lat = users[i].address.geo.lat;
     let lng = users[i].address.geo.lng;
     let marker = L.marker([lat, lng]).addTo(mymap);
-    marker.bindPopup(`<b>${name}</b><br>${city}`).openPopup();
+    marker.bindPopup(`<b>${name}</b><br>${city}`);
+  }
+}
+
+function postData(users) {
+  let dataStore = document.getElementById("dataStore");
+  for (let i = 0; i < users.length; i++) {
+    let currentUser = `
+    <p class="contact-info"><strong>Name:</strong> ${users[i].name} --- <strong>Email:</strong> ${users[i].email} --- <strong>Phone:</strong> ${users[i].phone} </p>
+    `
+    dataStore.innerHTML += currentUser;
   }
 }
