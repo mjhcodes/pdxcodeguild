@@ -39,6 +39,7 @@ function placeMarkers(users) {
   }
 }
 
+// loops through users array, creates <p> tags with contact info and adds to <div> on page
 function postData(users) {
   let dataStore = document.getElementById("dataStore");
   for (let i = 0; i < users.length; i++) {
